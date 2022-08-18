@@ -9,7 +9,7 @@ import LoginForm from './components/LoginForm';
 import { initializeApp } from 'firebase/app';
 import { getFirebaseConfig } from './firebase-config';
 
-const app = initializeApp(getFirebaseConfig());
+initializeApp(getFirebaseConfig());
 
 function App() {
 
