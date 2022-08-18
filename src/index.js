@@ -1,12 +1,12 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-
+//import firebase from "firebase";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -16,24 +16,21 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // eslint-disable-next-line no-unused-vars
 import { getStorage } from "firebase/storage";
+import { getFirebaseConfig } from './firebase-config';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyA_vKuBR602yWmAFf1u5VOJ0ZdGkmUqqK8",
-  authDomain: "fir-recipes-2ee87.firebaseapp.com",
-  projectId: "fir-recipes-2ee87",
-  storageBucket: "fir-recipes-2ee87.appspot.com",
-  messagingSenderId: "93183925076",
-  appId: "1:93183925076:web:b3eec14dd1e2c2192946c1",
-  measurementId: "G-VZDRJQ587F"
-};
+
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const firebaseAppConfig = getFirebaseConfig();
+
+const app = initializeApp(firebaseAppConfig);
+export default app;
+
 // eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
 
@@ -48,3 +45,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
