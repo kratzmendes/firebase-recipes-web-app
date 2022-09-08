@@ -383,6 +383,24 @@ function App() {
                           >
                             {recipe.name}
                           </div>
+                          
+                          <div
+                            className='recipe-image-box'
+                          >
+                            {
+                              recipe.imageUrl ?
+                              (
+                                <img
+                                  src={recipe.imageUrl}
+                                  alt={recipe.imageUrl}
+                                  className='recipe-image'
+                                />
+                              ) : (
+                                null
+                              )
+                            }
+                          </div>                        
+
                           <div
                             className='recipe-field'
                           >
